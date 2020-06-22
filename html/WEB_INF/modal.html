@@ -16,37 +16,48 @@
                                 </div>
                                 <table class="span12">
                                     <table>
-                                        <tr class="filters">
-                                        <th style="width: 4.1%; width:50px;">
-                                            <div class="checkbox radio-margin">
-                                                <label>
-                                                    <input type="checkbox" id = "mainChkBox" value="">
-                                                    <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
-                                                </label>
-                                            </div>
-                                        </th>
-                                        <th style="width: 48%">
-                                            <input type="text" class="form-control" placeholder="Cost Center Name" disabled>
-                                        </th>
-                                        <th style="width: 48%">
-                                            <input type="text" class="form-control" placeholder="Cost Center ID" disabled>
-                                        </th>
+                                        <tr>
+                                            <td>
+                                                <button class="btn btn-primary" >move up</button>
+                                            </td>
+                                            <td> 
+                                                <button class="btn btn-primary" >move down</button>
+                                            </td>
                                         </tr>
                                     </table>
                                     <div class="bg tablescroll">
-                                        <table class="table table-bordered table-striped">
-                                            <tr data-ng-repeat="row in infoConfig">
-                                                <td style="width: 4.1%; width:50px;">
+                                        <table class="table table-bordered ">
+                                            <thead>
+                                                <th style="width: 4.1%; width:50px;">
                                                     <div class="checkbox radio-margin">
                                                         <label>
-                                                            <input type="checkbox" data-ng-model="row.isCheck" value="">
+                                                            <input type="checkbox" id = "mainChkBox" value="">
                                                             <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
                                                         </label>
                                                     </div>
-                                                </td>
-                                                <td style="width: 49.8%">{{row.name}}</td>
-                                                <td style="width: 48%">{{row.cost}}</td>
-                                            </tr>
+                                                </th>
+                                                <th style="width: 48%">
+                                                    <input type="text" class="form-control" placeholder="Cost Center Name" disabled>
+                                                </th>
+                                                <th style="width: 48%">
+                                                    <input type="text" class="form-control" placeholder="Cost Center ID" disabled>
+                                                </th>
+                                            </thead>
+                                            <tbody>
+                                                <tr data-ng-repeat="row in infoConfig">
+                                                    <td style="width: 4.1%; width:50px;">
+                                                        <div class="checkbox radio-margin">
+                                                            <label>
+                                                                <input type="checkbox" data-ng-model="row.isCheck" value="">
+                                                                <span class="cr"><i class="cr-icon glyphicon glyphicon-ok"></i></span>
+                                                            </label>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width: 49.8%">{{row.name}}</td>
+                                                    <td style="width: 48%">{{row.cost}}</td>
+                                                </tr>
+                                            </tbody>
+                                            
  
                                         </table>
                                     </div>

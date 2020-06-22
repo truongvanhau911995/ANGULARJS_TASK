@@ -1,3 +1,9 @@
+/* selected row */
+tr:hover, tr.selected {
+    background-color: #FFCF8B
+}
+td {padding: 5px;}
+/* selected row */
 .large-Modal .modal-dialog{
     width: 95%;
   }

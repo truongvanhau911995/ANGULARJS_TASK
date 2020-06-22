@@ -20,21 +20,36 @@ app.controller('ModalCtrl', ['$scope', '$uibModal', '$rootScope', function ($sco
         },
         {
             isCheck: false,
-            name: "BYU-I",
+            name: "vvvvBYU-I",
             cost: "542584612548"
         },
         {
             isCheck: false,
-            name: "BYU-I",
+            name: "aaaBYU-I",
             cost: "542584612548"
         },
         {
             isCheck: false,
-            name: "BYU-I",
+            name: "sdsdBYU-I",
             cost: "542584612548"
         }, {
             isCheck: false,
+            name: "ddBYU-I",
+            cost: "542584612548"
+        },
+        {
+            isCheck: false,
             name: "BYU-I",
+            cost: "542584612548"
+        },
+        {
+            isCheck: false,
+            name: "BYU-Iaaa",
+            cost: "542584612548"
+        },
+        {
+            isCheck: false,
+            name: "vvvBYU-I",
             cost: "542584612548"
         }
     ]
@@ -66,12 +81,13 @@ app.controller('ModalContentCtrl', function ($scope, $uibModalInstance, infoConf
     //     $("#btn-ok").attr("disabled","disabled");
     // });
   
-      $scope.$watch('infoConfig', function(newValues){
+    $scope.$watch('infoConfig', function(newValues){
         // $scope.selectedItems.length = 0;
         // angular.forEach(newValues, function(item) {
         //     if (item.value == true) {
         //         $scope.selectedItems.push(item.name);
         //     }
+
         // });
         // console.log($scope.selectedItems);
         var m = $scope.infoConfig.findIndex(function(item) {
@@ -83,6 +99,24 @@ app.controller('ModalContentCtrl', function ($scope, $uibModalInstance, infoConf
             $scope.hideButton = true;
           }
     }, true);
+    $("tr").click(function(){
+        $(this).addClass("selected").siblings().removeClass("selected");
+    });
+    $('table').on('click', '.move-up', function () {
+        var thisRow = $(this).closest('tr');
+        var prevRow = thisRow.prev();
+        if (prevRow.length) {
+            prevRow.before(thisRow);
+        }
+    });
+    
+    $('table').on('click', '.move-down', function () {
+        var thisRow = $(this).closest('tr');
+        var nextRow = thisRow.next();
+        if (nextRow.length) {
+            nextRow.after(thisRow);
+        }
+    });
     $scope.ok = function () {
      
        $uibModalInstance.close($scope.infoConfig);
